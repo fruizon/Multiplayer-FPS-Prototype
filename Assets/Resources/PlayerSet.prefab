@@ -883,6 +883,16 @@ PrefabInstance:
       objectReference: {fileID: 7878995057104316405}
     - target: {fileID: 3315281539769116526, guid: af47a6a82ce91964f94e8678d02ad2fe,
         type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 2442499915592427800}
+    - target: {fileID: 3315281539769116526, guid: af47a6a82ce91964f94e8678d02ad2fe,
+        type: 3}
+      propertyPath: recoil
+      value: 
+      objectReference: {fileID: 7435820559627233092}
+    - target: {fileID: 3315281539769116526, guid: af47a6a82ce91964f94e8678d02ad2fe,
+        type: 3}
       propertyPath: woodHole
       value: 
       objectReference: {fileID: 100002, guid: 053ffbc5e89111349bb060a39ffa0f37, type: 3}
@@ -926,6 +936,11 @@ PrefabInstance:
       propertyPath: cameraHolder
       value: 
       objectReference: {fileID: 314738247581263792}
+    - target: {fileID: 3315281539769116526, guid: af47a6a82ce91964f94e8678d02ad2fe,
+        type: 3}
+      propertyPath: weaponAnimator
+      value: 
+      objectReference: {fileID: 4146791729095316147}
     - target: {fileID: 3315281539769116526, guid: af47a6a82ce91964f94e8678d02ad2fe,
         type: 3}
       propertyPath: bulletHolePrefab
@@ -1065,6 +1080,18 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4395800930205653635}
+    - targetCorrespondingSourceObject: {fileID: 5013232819297795938, guid: af47a6a82ce91964f94e8678d02ad2fe,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7435820559627233092}
+    - targetCorrespondingSourceObject: {fileID: 5013232819297795938, guid: af47a6a82ce91964f94e8678d02ad2fe,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2442499915592427800}
+    - targetCorrespondingSourceObject: {fileID: 5013232819297795938, guid: af47a6a82ce91964f94e8678d02ad2fe,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4146791729095316147}
   m_SourcePrefab: {fileID: 100100000, guid: af47a6a82ce91964f94e8678d02ad2fe, type: 3}
 --- !u!4 &314738247581263792 stripped
 Transform:
@@ -1183,6 +1210,56 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7435820559627233092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312099066095690107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79830e4c4a5a430408916b35516f09e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponTransform: {fileID: 8651787220108000193}
+  cameraRecoilPivot: {fileID: 314738247581263792}
+  recoilKick: 0.15
+  recoilSmooth: 8
+  cameraKick: 2
+  cameraReturnSpeed: 8
+  cameraSnappiness: 12
+--- !u!114 &2442499915592427800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312099066095690107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14045d7836a08a643bbd726b78f4991f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzleFlash: {fileID: 6659367216030457945}
+  metalImpact: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
+  woodImpact: {fileID: 100002, guid: ac1aa04288fad804ba1cd769f4377aaf, type: 3}
+  stoneImpact: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
+  metalHole: {fileID: 100002, guid: 627bfa08ce624ab40ab2fea71785b5f0, type: 3}
+  woodHole: {fileID: 100002, guid: 053ffbc5e89111349bb060a39ffa0f37, type: 3}
+  stoneHole: {fileID: 100006, guid: 94a130fb17f1cae4388a8fe1d8bd3055, type: 3}
+--- !u!114 &4146791729095316147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312099066095690107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d02964e834b6f49b0a80738dafdd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8651787220108000193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5681647294104167896, guid: af47a6a82ce91964f94e8678d02ad2fe,
@@ -1555,6 +1632,18 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8813691205271485587}
+    - targetCorrespondingSourceObject: {fileID: 4965438261709640327, guid: a35b8c32acba1334b9b31dfe8cdbc9be,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1364858410282780510}
+    - targetCorrespondingSourceObject: {fileID: 4965438261709640327, guid: a35b8c32acba1334b9b31dfe8cdbc9be,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8768617478023896292}
+    - targetCorrespondingSourceObject: {fileID: 4965438261709640327, guid: a35b8c32acba1334b9b31dfe8cdbc9be,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2106128638686343413}
   m_SourcePrefab: {fileID: 100100000, guid: a35b8c32acba1334b9b31dfe8cdbc9be, type: 3}
 --- !u!4 &1278806277932937477 stripped
 Transform:
@@ -1581,20 +1670,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 7878995057104316405}
-  muzzleFlash: {fileID: 2568323284390144513}
+  recoil: {fileID: 1364858410282780510}
+  vfx: {fileID: 8768617478023896292}
+  weaponAnimator: {fileID: 2106128638686343413}
   range: 100
   damage: 20
   fireRate: 0.23
   spread: 0.02
-  recoilKick: 0.09
-  recoilSmooth: 10
+--- !u!114 &1364858410282780510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942435880598449087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79830e4c4a5a430408916b35516f09e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponTransform: {fileID: 1278806277932937477}
   cameraRecoilPivot: {fileID: 314738247581263792}
+  recoilKick: 0.15
+  recoilSmooth: 8
   cameraKick: 2
   cameraReturnSpeed: 8
   cameraSnappiness: 12
+--- !u!114 &8768617478023896292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942435880598449087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14045d7836a08a643bbd726b78f4991f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzleFlash: {fileID: 2568323284390144513}
   metalImpact: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
   woodImpact: {fileID: 100002, guid: ac1aa04288fad804ba1cd769f4377aaf, type: 3}
   stoneImpact: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
   metalHole: {fileID: 100002, guid: 627bfa08ce624ab40ab2fea71785b5f0, type: 3}
   woodHole: {fileID: 100002, guid: 053ffbc5e89111349bb060a39ffa0f37, type: 3}
   stoneHole: {fileID: 100006, guid: 94a130fb17f1cae4388a8fe1d8bd3055, type: 3}
+--- !u!114 &2106128638686343413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942435880598449087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d02964e834b6f49b0a80738dafdd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
