@@ -4,12 +4,13 @@ public class WeaponSwitcher : MonoBehaviour
 {
     public GameObject[] weapons;
 
-    private int _currentWeaponIndex;
+    private int _currentWeaponIndex = -1;
     private Weapon currentWeapon;
+
+    public Weapon CurrentWeapon => currentWeapon;
 
     void Start()
     {
-        currentWeapon = weapons[1].GetComponent<Weapon>();
         SwitchWeapon(1);
     }
 

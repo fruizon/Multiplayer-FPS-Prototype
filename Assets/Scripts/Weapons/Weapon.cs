@@ -19,6 +19,13 @@ public class Weapon : MonoBehaviour
     [Header("Spread")]
     public float spread = 0.02f;
 
+    [Header("Ammo")]
+    public int magazineSize = 30;
+    public int currentAmmo = 30;
+    public int reserveAmmo = 90;
+
+
+
     private enum WeaponState
     {
         Ready,
@@ -51,8 +58,17 @@ public class Weapon : MonoBehaviour
 
     void HandleShoot()
     {
-        if (state != WeaponState.Ready) return;
-        if (!Input.GetMouseButton(0)) return;
+        if (state != WeaponState.Ready)
+            return;
+
+        if (currentAmmo <= 0)
+        {
+            Reload();
+            return;
+        }
+
+        if (!Input.GetMouseButton(0))
+            return;
 
         if (Time.time >= nextFireTime)
         {
@@ -63,6 +79,9 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
+        currentAmmo--;
+
+
         recoil?.AddRecoil();
 
         Vector3 direction = cam.transform.forward;
@@ -91,9 +110,29 @@ public class Weapon : MonoBehaviour
         if (state != WeaponState.Ready)
             return;
 
+        if (currentAmmo >= magazineSize)
+            return;
+
+        if (reserveAmmo <= 0)
+            return;
+
         state = WeaponState.Reloading;
 
-        weaponAnimator?.PlayReload();
+        weaponAnimator.PlayReload();
+    }
+
+    public void FinishReload()
+    {
+        int neededAmmo = magazineSize - currentAmmo;
+
+        int ammoToLoad = Mathf.Min(neededAmmo, reserveAmmo);
+
+        currentAmmo += ammoToLoad;
+        reserveAmmo -= ammoToLoad;
+
+        weaponAnimator.anim.enabled = false;
+
+        SetReady();
     }
 
     public void SetReady()

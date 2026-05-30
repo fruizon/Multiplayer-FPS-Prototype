@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WeaponAnimator : MonoBehaviour
 {
-    private Animator anim;
+    public Animator anim;
     private Weapon weapon;
 
     void Start()
