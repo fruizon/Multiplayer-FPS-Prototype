@@ -26,6 +26,12 @@ public class Weapon : MonoBehaviour
 
 
 
+
+
+    public WeaponAudio audioManager;
+
+
+
     private enum WeaponState
     {
         Ready,
@@ -45,7 +51,14 @@ public class Weapon : MonoBehaviour
         state = WeaponState.Equiping;
         nextFireTime = 0f;
 
+        audioManager?.PlayEquip();
         weaponAnimator?.PlayEquip();
+    }
+
+    void Awake()
+    {
+        if (audioManager == null)
+            audioManager = GetComponent<WeaponAudio>();
     }
 
     void Update()
@@ -80,6 +93,7 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         currentAmmo--;
+        audioManager.PlayShoot();
 
 
         recoil?.AddRecoil();
@@ -117,7 +131,7 @@ public class Weapon : MonoBehaviour
             return;
 
         state = WeaponState.Reloading;
-
+        audioManager?.PlayReload();
         weaponAnimator.PlayReload();
     }
 
