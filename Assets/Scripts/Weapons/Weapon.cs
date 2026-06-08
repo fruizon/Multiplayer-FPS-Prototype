@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -30,6 +31,8 @@ public class Weapon : MonoBehaviour
 
     public WeaponAudio audioManager;
 
+    private PhotonView photonView;
+
 
 
     private enum WeaponState
@@ -54,6 +57,10 @@ public class Weapon : MonoBehaviour
         audioManager?.PlayEquip();
         weaponAnimator?.PlayEquip();
     }
+    void Start()
+    {
+        photonView = GetComponentInParent<PhotonView>();
+    }
 
     void Awake()
     {
@@ -63,6 +70,9 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        // if (!photonView.IsMine) return;
+
+
         if (Input.GetKeyDown(KeyCode.R))
             Reload();
 

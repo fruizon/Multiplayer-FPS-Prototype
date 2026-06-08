@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour
@@ -7,15 +8,20 @@ public class WeaponSwitcher : MonoBehaviour
     private int _currentWeaponIndex = -1;
     private Weapon currentWeapon;
 
+    private PhotonView photonView;
+
     public Weapon CurrentWeapon => currentWeapon;
 
     void Start()
     {
+        photonView = GetComponentInParent<PhotonView>();
         SwitchWeapon(1);
     }
 
     void Update()
     {
+        // if (!photonView.IsMine) return;
+
         if (currentWeapon != null && !currentWeapon.CanSwitch())
             return;
 
