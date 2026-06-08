@@ -122,8 +122,16 @@ public class Weapon : MonoBehaviour
             vfx?.SpawnBulletHole(hit);
 
             Health health = hit.collider.GetComponent<Health>();
+
             if (health != null)
-                health.TakeDamage(damage);
+            {
+                PhotonView targetPV = health.GetComponent<PhotonView>();
+
+                if (targetPV != null)
+                {
+                    targetPV.RPC("TakeDamageRPC", RpcTarget.All, damage);
+                }
+            }
         }
 
         vfx?.PlayMuzzle();
